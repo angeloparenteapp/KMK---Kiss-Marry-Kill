@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">KMK - Kiss Marry Kill</string>
+
+    <string name="male">Boys</string>
+    <string name="female">Girls</string>
+    <string name="both">Boys &amp; Girls</string>
+    <string name="you_like">You like</string>
+
+    <string name="no_internet">No internet! \n Connect to internet and swipe down to refresh!</string>
+
+    <string name="next">Next</string>
+    <string name="submit">Submit</string>
+
+    <string name="kiss">Kiss</string>
+    <string name="marry">Marry</string>
+    <string name="kill">Kill</string>
+
+    <string name="welcome">welcome to KMK</string>
+
+</resources>

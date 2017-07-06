@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "890859507528",
+    "firebase_url": "https://kmk-kiss-marry-kill.firebaseio.com",
+    "project_id": "kmk-kiss-marry-kill",
+    "storage_bucket": "kmk-kiss-marry-kill.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890859507528:android:07e36c34fdf5d6fe",
+        "android_client_info": {
+          "package_name": "com.angeloparenteapp.kmk_kissmarrykill"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890859507528-dmnud2cq3fi3uin3eiu24172et1klghv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.angeloparenteapp.kmk_kissmarrykill",
+            "certificate_hash": "d12f6e381dfc09c307a5bd2b07744337d40e65c0"
+          }
+        },
+        {
+          "client_id": "890859507528-38fm13e468hi2h0p3or69q8ufls74hk8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.angeloparenteapp.kmk_kissmarrykill",
+            "certificate_hash": "e28cce5f7086c98455b3b0ce236c843305b0b10d"
+          }
+        },
+        {
+          "client_id": "890859507528-pg7t7c2ge9ejb0l7ihevd550gimmf490.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.angeloparenteapp.kmk_kissmarrykill",
+            "certificate_hash": "3d4ac25ad25ce7bc82bd4cfb56a9e51fcd303410"
+          }
+        },
+        {
+          "client_id": "890859507528-0e4vb67toa85popmg9l705bk8te9jm0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5Zi5E-MyfY1ujfPIBR0ITynf-u6Xp3CQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890859507528-0e4vb67toa85popmg9l705bk8te9jm0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
