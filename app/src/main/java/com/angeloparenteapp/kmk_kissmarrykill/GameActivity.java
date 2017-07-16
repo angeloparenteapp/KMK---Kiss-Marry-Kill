@@ -953,7 +953,6 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (Utils.isOnline(mContext)) {
-
                     startAgain();
 
                 } else {
