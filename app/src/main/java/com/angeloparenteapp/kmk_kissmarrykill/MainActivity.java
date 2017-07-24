@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (Utils.isOnline(mContext)) {
                     Intent intent = new Intent(mContext, GameActivity.class);
-                    intent.putExtra("type", "male");
+                    intent.putExtra("type", "male-players");
                     startActivity(intent);
                 } else {
                     setContentView(R.layout.no_internet);
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (Utils.isOnline(mContext)) {
                     Intent intent = new Intent(mContext, GameActivity.class);
-                    intent.putExtra("type", "female");
+                    intent.putExtra("type", "female-players");
                     startActivity(intent);
                 } else {
                     setContentView(R.layout.no_internet);

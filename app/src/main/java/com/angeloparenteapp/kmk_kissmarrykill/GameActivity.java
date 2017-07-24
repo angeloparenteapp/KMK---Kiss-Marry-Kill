@@ -708,23 +708,23 @@ public class GameActivity extends AppCompatActivity {
 
                         nextButton.setVisibility(Button.VISIBLE);
 
-                        if (type.equals("male")) {
-                            mDatabaseMale.child("male").child("" + randomInt1).child("kiss").setValue(newKiss1);
-                            mDatabaseMale.child("male").child("" + randomInt2).child("marry").setValue(newMarry2);
-                            mDatabaseMale.child("male").child("" + randomInt3).child("kill").setValue(newKill3);
-                        } else if (type.equals("female")) {
-                            mDatabaseMale.child("female").child("" + randomInt1).child("kiss").setValue(newKiss1);
-                            mDatabaseMale.child("female").child("" + randomInt2).child("marry").setValue(newMarry2);
-                            mDatabaseMale.child("female").child("" + randomInt3).child("kill").setValue(newKill3);
+                        if (type.equals("male-players")) {
+                            mDatabaseMale.child("male-players").child("" + randomInt1).child("kiss").setValue(newKiss1);
+                            mDatabaseMale.child("male-players").child("" + randomInt2).child("marry").setValue(newMarry2);
+                            mDatabaseMale.child("male-players").child("" + randomInt3).child("kill").setValue(newKill3);
+                        } else if (type.equals("female-players")) {
+                            mDatabaseMale.child("female-players").child("" + randomInt1).child("kiss").setValue(newKiss1);
+                            mDatabaseMale.child("female-players").child("" + randomInt2).child("marry").setValue(newMarry2);
+                            mDatabaseMale.child("female-players").child("" + randomInt3).child("kill").setValue(newKill3);
                         } else {
                             if (randomInt == 1) {
-                                mDatabaseMale.child("male").child("" + randomInt1).child("kiss").setValue(newKiss1);
-                                mDatabaseMale.child("male").child("" + randomInt2).child("marry").setValue(newMarry2);
-                                mDatabaseMale.child("male").child("" + randomInt3).child("kill").setValue(newKill3);
+                                mDatabaseMale.child("male-players").child("" + randomInt1).child("kiss").setValue(newKiss1);
+                                mDatabaseMale.child("male-players").child("" + randomInt2).child("marry").setValue(newMarry2);
+                                mDatabaseMale.child("male-players").child("" + randomInt3).child("kill").setValue(newKill3);
                             } else {
-                                mDatabaseMale.child("female").child("" + randomInt1).child("kiss").setValue(newKiss1);
-                                mDatabaseMale.child("female").child("" + randomInt2).child("marry").setValue(newMarry2);
-                                mDatabaseMale.child("female").child("" + randomInt3).child("kill").setValue(newKill3);
+                                mDatabaseMale.child("female-players").child("" + randomInt1).child("kiss").setValue(newKiss1);
+                                mDatabaseMale.child("female-players").child("" + randomInt2).child("marry").setValue(newMarry2);
+                                mDatabaseMale.child("female-players").child("" + randomInt3).child("kill").setValue(newKill3);
                             }
                         }
 
@@ -746,23 +746,23 @@ public class GameActivity extends AppCompatActivity {
                     } else if (kissButton1.isSelected() && marryButton3.isSelected() && killButton2.isSelected()) {
                         nextButton.setVisibility(Button.VISIBLE);
 
-                        if (type.equals("male")) {
-                            mDatabaseMale.child("male").child("" + randomInt1).child("kiss").setValue(newKiss1);
-                            mDatabaseMale.child("male").child("" + randomInt2).child("kill").setValue(newKill2);
-                            mDatabaseMale.child("male").child("" + randomInt3).child("marry").setValue(newMarry3);
-                        } else if (type.equals("female")) {
-                            mDatabaseMale.child("female").child("" + randomInt1).child("kiss").setValue(newKiss1);
-                            mDatabaseMale.child("female").child("" + randomInt2).child("kill").setValue(newKill2);
-                            mDatabaseMale.child("female").child("" + randomInt3).child("marry").setValue(newKill3);
+                        if (type.equals("male-players")) {
+                            mDatabaseMale.child("male-players").child("" + randomInt1).child("kiss").setValue(newKiss1);
+                            mDatabaseMale.child("male-players").child("" + randomInt2).child("kill").setValue(newKill2);
+                            mDatabaseMale.child("male-players").child("" + randomInt3).child("marry").setValue(newMarry3);
+                        } else if (type.equals("female-players")) {
+                            mDatabaseMale.child("female-players").child("" + randomInt1).child("kiss").setValue(newKiss1);
+                            mDatabaseMale.child("female-players").child("" + randomInt2).child("kill").setValue(newKill2);
+                            mDatabaseMale.child("female-players").child("" + randomInt3).child("marry").setValue(newKill3);
                         } else {
                             if (randomInt == 1) {
-                                mDatabaseMale.child("male").child("" + randomInt1).child("kiss").setValue(newKiss1);
-                                mDatabaseMale.child("male").child("" + randomInt2).child("kill").setValue(newKill2);
-                                mDatabaseMale.child("male").child("" + randomInt3).child("marry").setValue(newMarry3);
+                                mDatabaseMale.child("male-players").child("" + randomInt1).child("kiss").setValue(newKiss1);
+                                mDatabaseMale.child("male-players").child("" + randomInt2).child("kill").setValue(newKill2);
+                                mDatabaseMale.child("male-players").child("" + randomInt3).child("marry").setValue(newMarry3);
                             } else {
-                                mDatabaseMale.child("female").child("" + randomInt1).child("kiss").setValue(newKiss1);
-                                mDatabaseMale.child("female").child("" + randomInt2).child("kill").setValue(newKill2);
-                                mDatabaseMale.child("female").child("" + randomInt3).child("marry").setValue(newKill3);
+                                mDatabaseMale.child("female-players").child("" + randomInt1).child("kiss").setValue(newKiss1);
+                                mDatabaseMale.child("female-players").child("" + randomInt2).child("kill").setValue(newKill2);
+                                mDatabaseMale.child("female-players").child("" + randomInt3).child("marry").setValue(newKill3);
                             }
                         }
 
@@ -784,23 +784,23 @@ public class GameActivity extends AppCompatActivity {
                     } else if (kissButton2.isSelected() && marryButton1.isSelected() && killButton3.isSelected()) {
                         nextButton.setVisibility(Button.VISIBLE);
 
-                        if (type.equals("male")) {
-                            mDatabaseMale.child("male").child("" + randomInt1).child("marry").setValue(newMarry1);
-                            mDatabaseMale.child("male").child("" + randomInt2).child("kiss").setValue(newKiss2);
-                            mDatabaseMale.child("male").child("" + randomInt3).child("kill").setValue(newKill3);
-                        } else if (type.equals("female")) {
-                            mDatabaseMale.child("female").child("" + randomInt1).child("marry").setValue(newMarry1);
-                            mDatabaseMale.child("female").child("" + randomInt2).child("kiss").setValue(newKiss2);
-                            mDatabaseMale.child("female").child("" + randomInt3).child("kill").setValue(newKill3);
+                        if (type.equals("male-players")) {
+                            mDatabaseMale.child("male-players").child("" + randomInt1).child("marry").setValue(newMarry1);
+                            mDatabaseMale.child("male-players").child("" + randomInt2).child("kiss").setValue(newKiss2);
+                            mDatabaseMale.child("male-players").child("" + randomInt3).child("kill").setValue(newKill3);
+                        } else if (type.equals("female-players")) {
+                            mDatabaseMale.child("female-players").child("" + randomInt1).child("marry").setValue(newMarry1);
+                            mDatabaseMale.child("female-players").child("" + randomInt2).child("kiss").setValue(newKiss2);
+                            mDatabaseMale.child("female-players").child("" + randomInt3).child("kill").setValue(newKill3);
                         } else {
                             if (randomInt == 1) {
-                                mDatabaseMale.child("male").child("" + randomInt1).child("marry").setValue(newMarry1);
-                                mDatabaseMale.child("male").child("" + randomInt2).child("kiss").setValue(newKiss2);
-                                mDatabaseMale.child("male").child("" + randomInt3).child("kill").setValue(newKill3);
+                                mDatabaseMale.child("male-players").child("" + randomInt1).child("marry").setValue(newMarry1);
+                                mDatabaseMale.child("male-players").child("" + randomInt2).child("kiss").setValue(newKiss2);
+                                mDatabaseMale.child("male-players").child("" + randomInt3).child("kill").setValue(newKill3);
                             } else {
-                                mDatabaseMale.child("female").child("" + randomInt1).child("marry").setValue(newMarry1);
-                                mDatabaseMale.child("female").child("" + randomInt2).child("kiss").setValue(newKiss2);
-                                mDatabaseMale.child("female").child("" + randomInt3).child("kill").setValue(newKill3);
+                                mDatabaseMale.child("female-players").child("" + randomInt1).child("marry").setValue(newMarry1);
+                                mDatabaseMale.child("female-players").child("" + randomInt2).child("kiss").setValue(newKiss2);
+                                mDatabaseMale.child("female-players").child("" + randomInt3).child("kill").setValue(newKill3);
                             }
                         }
 
@@ -822,23 +822,23 @@ public class GameActivity extends AppCompatActivity {
                     } else if (kissButton2.isSelected() && marryButton3.isSelected() && killButton1.isSelected()) {
                         nextButton.setVisibility(Button.VISIBLE);
 
-                        if (type.equals("male")) {
-                            mDatabaseMale.child("male").child("" + randomInt1).child("kill").setValue(newKill1);
-                            mDatabaseMale.child("male").child("" + randomInt2).child("kiss").setValue(newKiss2);
-                            mDatabaseMale.child("male").child("" + randomInt3).child("marry").setValue(newMarry3);
-                        } else if (type.equals("female")) {
-                            mDatabaseMale.child("female").child("" + randomInt1).child("kill").setValue(newKill1);
-                            mDatabaseMale.child("female").child("" + randomInt2).child("kiss").setValue(newKiss2);
-                            mDatabaseMale.child("female").child("" + randomInt3).child("marry").setValue(newMarry3);
+                        if (type.equals("male-players")) {
+                            mDatabaseMale.child("male-players").child("" + randomInt1).child("kill").setValue(newKill1);
+                            mDatabaseMale.child("male-players").child("" + randomInt2).child("kiss").setValue(newKiss2);
+                            mDatabaseMale.child("male-players").child("" + randomInt3).child("marry").setValue(newMarry3);
+                        } else if (type.equals("female-players")) {
+                            mDatabaseMale.child("female-players").child("" + randomInt1).child("kill").setValue(newKill1);
+                            mDatabaseMale.child("female-players").child("" + randomInt2).child("kiss").setValue(newKiss2);
+                            mDatabaseMale.child("female-players").child("" + randomInt3).child("marry").setValue(newMarry3);
                         } else {
                             if (randomInt == 1) {
-                                mDatabaseMale.child("male").child("" + randomInt1).child("kill").setValue(newKill1);
-                                mDatabaseMale.child("male").child("" + randomInt2).child("kiss").setValue(newKiss2);
-                                mDatabaseMale.child("male").child("" + randomInt3).child("marry").setValue(newMarry3);
+                                mDatabaseMale.child("male-players").child("" + randomInt1).child("kill").setValue(newKill1);
+                                mDatabaseMale.child("male-players").child("" + randomInt2).child("kiss").setValue(newKiss2);
+                                mDatabaseMale.child("male-players").child("" + randomInt3).child("marry").setValue(newMarry3);
                             } else {
-                                mDatabaseMale.child("female").child("" + randomInt1).child("kill").setValue(newKill1);
-                                mDatabaseMale.child("female").child("" + randomInt2).child("kiss").setValue(newKiss2);
-                                mDatabaseMale.child("female").child("" + randomInt3).child("marry").setValue(newMarry3);
+                                mDatabaseMale.child("female-players").child("" + randomInt1).child("kill").setValue(newKill1);
+                                mDatabaseMale.child("female-players").child("" + randomInt2).child("kiss").setValue(newKiss2);
+                                mDatabaseMale.child("female-players").child("" + randomInt3).child("marry").setValue(newMarry3);
                             }
                         }
 
@@ -860,23 +860,23 @@ public class GameActivity extends AppCompatActivity {
                     } else if (kissButton3.isSelected() && marryButton1.isSelected() && killButton2.isSelected()) {
                         nextButton.setVisibility(Button.VISIBLE);
 
-                        if (type.equals("male")) {
-                            mDatabaseMale.child("male").child("" + randomInt1).child("marry").setValue(newMarry1);
-                            mDatabaseMale.child("male").child("" + randomInt2).child("kill").setValue(newKill2);
-                            mDatabaseMale.child("male").child("" + randomInt3).child("kiss").setValue(newKiss3);
-                        } else if (type.equals("female")) {
-                            mDatabaseMale.child("female").child("" + randomInt1).child("marry").setValue(newMarry1);
-                            mDatabaseMale.child("female").child("" + randomInt2).child("kill").setValue(newKill2);
-                            mDatabaseMale.child("female").child("" + randomInt3).child("kiss").setValue(newKiss3);
+                        if (type.equals("male-players")) {
+                            mDatabaseMale.child("male-players").child("" + randomInt1).child("marry").setValue(newMarry1);
+                            mDatabaseMale.child("male-players").child("" + randomInt2).child("kill").setValue(newKill2);
+                            mDatabaseMale.child("male-players").child("" + randomInt3).child("kiss").setValue(newKiss3);
+                        } else if (type.equals("female-players")) {
+                            mDatabaseMale.child("female-players").child("" + randomInt1).child("marry").setValue(newMarry1);
+                            mDatabaseMale.child("female-players").child("" + randomInt2).child("kill").setValue(newKill2);
+                            mDatabaseMale.child("female-players").child("" + randomInt3).child("kiss").setValue(newKiss3);
                         } else {
                             if (randomInt == 1) {
-                                mDatabaseMale.child("male").child("" + randomInt1).child("marry").setValue(newMarry1);
-                                mDatabaseMale.child("male").child("" + randomInt2).child("kill").setValue(newKill2);
-                                mDatabaseMale.child("male").child("" + randomInt3).child("kiss").setValue(newKiss3);
+                                mDatabaseMale.child("male-players").child("" + randomInt1).child("marry").setValue(newMarry1);
+                                mDatabaseMale.child("male-players").child("" + randomInt2).child("kill").setValue(newKill2);
+                                mDatabaseMale.child("male-players").child("" + randomInt3).child("kiss").setValue(newKiss3);
                             } else {
-                                mDatabaseMale.child("female").child("" + randomInt1).child("marry").setValue(newMarry1);
-                                mDatabaseMale.child("female").child("" + randomInt2).child("kill").setValue(newKill2);
-                                mDatabaseMale.child("female").child("" + randomInt3).child("kiss").setValue(newKiss3);
+                                mDatabaseMale.child("female-players").child("" + randomInt1).child("marry").setValue(newMarry1);
+                                mDatabaseMale.child("female-players").child("" + randomInt2).child("kill").setValue(newKill2);
+                                mDatabaseMale.child("female-players").child("" + randomInt3).child("kiss").setValue(newKiss3);
                             }
                         }
 
@@ -898,23 +898,23 @@ public class GameActivity extends AppCompatActivity {
                     } else if (kissButton3.isSelected() && marryButton2.isSelected() && killButton1.isSelected()) {
                         nextButton.setVisibility(Button.VISIBLE);
 
-                        if (type.equals("male")) {
-                            mDatabaseMale.child("male").child("" + randomInt1).child("kill").setValue(newKill1);
-                            mDatabaseMale.child("male").child("" + randomInt2).child("marry").setValue(newMarry2);
-                            mDatabaseMale.child("male").child("" + randomInt3).child("kiss").setValue(newKiss3);
-                        } else if (type.equals("female")) {
-                            mDatabaseMale.child("female").child("" + randomInt1).child("kill").setValue(newKill1);
-                            mDatabaseMale.child("female").child("" + randomInt2).child("marry").setValue(newMarry2);
-                            mDatabaseMale.child("female").child("" + randomInt3).child("kiss").setValue(newKiss3);
+                        if (type.equals("male-players")) {
+                            mDatabaseMale.child("male-players").child("" + randomInt1).child("kill").setValue(newKill1);
+                            mDatabaseMale.child("male-players").child("" + randomInt2).child("marry").setValue(newMarry2);
+                            mDatabaseMale.child("male-players").child("" + randomInt3).child("kiss").setValue(newKiss3);
+                        } else if (type.equals("female-players")) {
+                            mDatabaseMale.child("female-players").child("" + randomInt1).child("kill").setValue(newKill1);
+                            mDatabaseMale.child("female-players").child("" + randomInt2).child("marry").setValue(newMarry2);
+                            mDatabaseMale.child("female-players").child("" + randomInt3).child("kiss").setValue(newKiss3);
                         } else {
                             if (randomInt == 1) {
-                                mDatabaseMale.child("male").child("" + randomInt1).child("kill").setValue(newKill1);
-                                mDatabaseMale.child("male").child("" + randomInt2).child("marry").setValue(newMarry2);
-                                mDatabaseMale.child("male").child("" + randomInt3).child("kiss").setValue(newKiss3);
+                                mDatabaseMale.child("male-players").child("" + randomInt1).child("kill").setValue(newKill1);
+                                mDatabaseMale.child("male-players").child("" + randomInt2).child("marry").setValue(newMarry2);
+                                mDatabaseMale.child("male-players").child("" + randomInt3).child("kiss").setValue(newKiss3);
                             } else {
-                                mDatabaseMale.child("female").child("" + randomInt1).child("kill").setValue(newKill1);
-                                mDatabaseMale.child("female").child("" + randomInt2).child("marry").setValue(newMarry2);
-                                mDatabaseMale.child("female").child("" + randomInt3).child("kiss").setValue(newKiss3);
+                                mDatabaseMale.child("female-players").child("" + randomInt1).child("kill").setValue(newKill1);
+                                mDatabaseMale.child("female-players").child("" + randomInt2).child("marry").setValue(newMarry2);
+                                mDatabaseMale.child("female-players").child("" + randomInt3).child("kiss").setValue(newKiss3);
                             }
                         }
 
@@ -1071,20 +1071,82 @@ public class GameActivity extends AppCompatActivity {
 
     public void setRandomImage() {
 
-        firstImage.setImageResource(0);
-        secondImage.setImageResource(0);
-        thirdImage.setImageResource(0);
-
         Random random = new Random();
 
-        if (type.equals("male")) {
+        if (type.equals("male-players")) {
 
-            randomInt1 = random.nextInt(100);
-            randomInt2 = random.nextInt(100);
-            randomInt3 = random.nextInt(100);
+            randomInt1 = random.nextInt(1);
+            randomInt2 = random.nextInt(1);
+            randomInt3 = random.nextInt(1);
 
-            if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
-                ValueEventListener listener = mDatabaseMale.child("male").addValueEventListener(new ValueEventListener() {
+            //if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
+            ValueEventListener listener = mDatabaseMale.child("male-players").addValueEventListener(new ValueEventListener() {
+
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    ArrayList<Person> listPerson = new ArrayList<>();
+                    for (DataSnapshot personDataSnapshot : dataSnapshot.getChildren()) {
+                        Person person = personDataSnapshot.getValue(Person.class);
+                        listPerson.add(person);
+                    }
+                    setImageView(listPerson, randomInt1, randomInt2, randomInt3);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    setRandomImage();
+                }
+            });
+
+            mDatabaseMale.removeEventListener(listener);
+            //} else {
+            //  setRandomImage();
+            //}
+
+        } else if (type.equals("female-players")) {
+
+            randomInt1 = random.nextInt(1);
+            randomInt2 = random.nextInt(1);
+            randomInt3 = random.nextInt(1);
+
+            //if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
+            ValueEventListener listener = mDatabaseFemale.child("female-players").addValueEventListener(new ValueEventListener() {
+
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    ArrayList<Person> listPerson = new ArrayList<>();
+                    for (DataSnapshot personDataSnapshot : dataSnapshot.getChildren()) {
+                        Person person = personDataSnapshot.getValue(Person.class);
+                        listPerson.add(person);
+                    }
+                    setImageView(listPerson, randomInt1, randomInt2, randomInt3);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    setRandomImage();
+                }
+            });
+
+            mDatabaseFemale.removeEventListener(listener);
+            //} else {
+            //    setRandomImage();
+            //}
+
+        } else {
+            Random random1 = new Random();
+            randomInt = random1.nextInt(2);
+
+            if (randomInt == 1) {
+
+                randomInt1 = random.nextInt(1);
+                randomInt2 = random.nextInt(1);
+                randomInt3 = random.nextInt(1);
+
+                //if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
+                ValueEventListener listener = mDatabaseMale.child("male-players").addValueEventListener(new ValueEventListener() {
 
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -1101,21 +1163,22 @@ public class GameActivity extends AppCompatActivity {
                     public void onCancelled(DatabaseError databaseError) {
                         setRandomImage();
                     }
+
                 });
 
                 mDatabaseMale.removeEventListener(listener);
+                //} else {
+                //   setRandomImage();
+                //}
+
             } else {
-                setRandomImage();
-            }
 
-        } else if (type.equals("female")) {
+                randomInt1 = random.nextInt(1);
+                randomInt2 = random.nextInt(1);
+                randomInt3 = random.nextInt(1);
 
-            randomInt1 = random.nextInt(100);
-            randomInt2 = random.nextInt(100);
-            randomInt3 = random.nextInt(100);
-
-            if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
-                ValueEventListener listener = mDatabaseFemale.child("female").addValueEventListener(new ValueEventListener() {
+                //if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
+                ValueEventListener listener = mDatabaseFemale.child("female-players").addValueEventListener(new ValueEventListener() {
 
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -1135,76 +1198,9 @@ public class GameActivity extends AppCompatActivity {
                 });
 
                 mDatabaseFemale.removeEventListener(listener);
-            } else {
-                setRandomImage();
-            }
-
-        } else {
-            Random random1 = new Random();
-            randomInt = random1.nextInt(2);
-
-            if (randomInt == 1) {
-
-                randomInt1 = random.nextInt(100);
-                randomInt2 = random.nextInt(100);
-                randomInt3 = random.nextInt(100);
-
-                if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
-                    ValueEventListener listener = mDatabaseMale.child("male").addValueEventListener(new ValueEventListener() {
-
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-
-                            ArrayList<Person> listPerson = new ArrayList<>();
-                            for (DataSnapshot personDataSnapshot : dataSnapshot.getChildren()) {
-                                Person person = personDataSnapshot.getValue(Person.class);
-                                listPerson.add(person);
-                            }
-                            setImageView(listPerson, randomInt1, randomInt2, randomInt3);
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                            setRandomImage();
-                        }
-
-                    });
-
-                    mDatabaseMale.removeEventListener(listener);
-                } else {
-                    setRandomImage();
-                }
-
-            } else {
-
-                randomInt1 = random.nextInt(100);
-                randomInt2 = random.nextInt(100);
-                randomInt3 = random.nextInt(100);
-
-                if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
-                    ValueEventListener listener = mDatabaseFemale.child("female").addValueEventListener(new ValueEventListener() {
-
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-
-                            ArrayList<Person> listPerson = new ArrayList<>();
-                            for (DataSnapshot personDataSnapshot : dataSnapshot.getChildren()) {
-                                Person person = personDataSnapshot.getValue(Person.class);
-                                listPerson.add(person);
-                            }
-                            setImageView(listPerson, randomInt1, randomInt2, randomInt3);
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                            setRandomImage();
-                        }
-                    });
-
-                    mDatabaseFemale.removeEventListener(listener);
-                } else {
-                    setRandomImage();
-                }
+                //} else {
+                //    setRandomImage();
+                //}
             }
         }
     }
