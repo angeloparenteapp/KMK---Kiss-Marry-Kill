@@ -1,8 +1,6 @@
 package com.angeloparenteapp.kmk_kissmarrykill;
 
-/**
- * Created by Angelo on 12/05/2017.
- */
+
 
 public class Person {
     private int kiss;
