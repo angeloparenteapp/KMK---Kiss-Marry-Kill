@@ -15,4 +15,6 @@
     <string name="marry">Marry</string>
     <string name="kill">Kill</string>
 
+    <string name="insert_your_name">   Insert your name</string>
+    <string name="select_image">Select your image</string>
 </resources>
