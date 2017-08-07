@@ -2,12 +2,13 @@ package com.angeloparenteapp.kmk_kissmarrykill;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import com.angeloparenteapp.kmk_kissmarrykill.Utils.Utils;
 import com.bumptech.glide.Glide;
@@ -28,7 +29,7 @@ public class Splash extends AppCompatActivity {
         mContentView = findViewById(R.id.activity_splash);
         Utils.hide(mContentView);
 
-        ImageView imageView = (ImageView) findViewById(R.id.splash);
+        ImageView imageView = findViewById(R.id.splash);
         Glide.with(mContext).load(R.drawable.splash).into(imageView);
 
         new Handler().postDelayed(new Runnable(){

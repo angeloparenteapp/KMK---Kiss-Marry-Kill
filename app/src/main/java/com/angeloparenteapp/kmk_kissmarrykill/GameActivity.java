@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -20,6 +21,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -62,6 +64,9 @@ public class GameActivity extends AppCompatActivity {
     public int randomInt2;
     public int randomInt3;
 
+    public int howManyMale;
+    public int howManyFemale;
+
     //Firebase references
     public DatabaseReference mDatabaseMale;
     public DatabaseReference mDatabaseFemale;
@@ -78,6 +83,9 @@ public class GameActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         type = intent.getStringExtra("type");
+        howManyMale = intent.getIntExtra("howManyMale", 1);
+        howManyFemale = intent.getIntExtra("howManyFemale", 1);
+        Log.d("HOWMANY: ", " " + howManyMale + "female: " + howManyFemale);
 
         df = new DecimalFormat("#.#");
         df.setRoundingMode(RoundingMode.CEILING);
@@ -85,13 +93,13 @@ public class GameActivity extends AppCompatActivity {
         mDatabaseMale = FirebaseDatabase.getInstance().getReference();
         mDatabaseFemale = FirebaseDatabase.getInstance().getReference();
 
-        progressBar1 = (ProgressBar) findViewById(R.id.progress1);
-        progressBar2 = (ProgressBar) findViewById(R.id.progress2);
-        progressBar3 = (ProgressBar) findViewById(R.id.progress3);
+        progressBar1 = findViewById(R.id.progress1);
+        progressBar2 = findViewById(R.id.progress2);
+        progressBar3 = findViewById(R.id.progress3);
 
-        name1 = (TextView) findViewById(R.id.name1);
-        name2 = (TextView) findViewById(R.id.name2);
-        name3 = (TextView) findViewById(R.id.name3);
+        name1 = findViewById(R.id.name1);
+        name2 = findViewById(R.id.name2);
+        name3 = findViewById(R.id.name3);
         Utils.setTextViewCustomFont(mContext, name1);
         Utils.setTextViewCustomFont(mContext, name2);
         Utils.setTextViewCustomFont(mContext, name3);
@@ -104,19 +112,19 @@ public class GameActivity extends AppCompatActivity {
         transparency2.setVisibility(View.INVISIBLE);
         transparency3.setVisibility(View.INVISIBLE);
 
-        firstImage = (ImageView) findViewById(R.id.firstImage);
-        secondImage = (ImageView) findViewById(R.id.secondImage);
-        thirdImage = (ImageView) findViewById(R.id.thirdImage);
+        firstImage = findViewById(R.id.firstImage);
+        secondImage = findViewById(R.id.secondImage);
+        thirdImage = findViewById(R.id.thirdImage);
 
-        textPercKiss1 = (TextView) findViewById(R.id.textPercKiss1);
-        textPercKiss2 = (TextView) findViewById(R.id.textPercKiss2);
-        textPercKiss3 = (TextView) findViewById(R.id.textPercKiss3);
-        textPercKill1 = (TextView) findViewById(R.id.textPercKill1);
-        textPercKill2 = (TextView) findViewById(R.id.textPercKill2);
-        textPercKill3 = (TextView) findViewById(R.id.textPercKill3);
-        textPercMarry1 = (TextView) findViewById(R.id.textPercMarry1);
-        textPercMarry2 = (TextView) findViewById(R.id.textPercMarry2);
-        textPercMarry3 = (TextView) findViewById(R.id.textPercMarry3);
+        textPercKiss1 = findViewById(R.id.textPercKiss1);
+        textPercKiss2 = findViewById(R.id.textPercKiss2);
+        textPercKiss3 = findViewById(R.id.textPercKiss3);
+        textPercKill1 = findViewById(R.id.textPercKill1);
+        textPercKill2 = findViewById(R.id.textPercKill2);
+        textPercKill3 = findViewById(R.id.textPercKill3);
+        textPercMarry1 = findViewById(R.id.textPercMarry1);
+        textPercMarry2 = findViewById(R.id.textPercMarry2);
+        textPercMarry3 = findViewById(R.id.textPercMarry3);
 
         Utils.setTextViewCustomFont(mContext, textPercKiss1);
         Utils.setTextViewCustomFont(mContext, textPercKiss2);
@@ -128,20 +136,20 @@ public class GameActivity extends AppCompatActivity {
         Utils.setTextViewCustomFont(mContext, textPercMarry2);
         Utils.setTextViewCustomFont(mContext, textPercMarry3);
 
-        submitButton = (Button) findViewById(R.id.submitButton);
-        nextButton = (Button) findViewById(R.id.nextButton);
+        submitButton = findViewById(R.id.submitButton);
+        nextButton = findViewById(R.id.nextButton);
 
-        kissButton1 = (ImageButton) findViewById(R.id.kiss1);
-        kissButton2 = (ImageButton) findViewById(R.id.kiss2);
-        kissButton3 = (ImageButton) findViewById(R.id.kiss3);
+        kissButton1 = findViewById(R.id.kiss1);
+        kissButton2 = findViewById(R.id.kiss2);
+        kissButton3 = findViewById(R.id.kiss3);
 
-        marryButton1 = (ImageButton) findViewById(R.id.marry1);
-        marryButton2 = (ImageButton) findViewById(R.id.marry2);
-        marryButton3 = (ImageButton) findViewById(R.id.marry3);
+        marryButton1 = findViewById(R.id.marry1);
+        marryButton2 = findViewById(R.id.marry2);
+        marryButton3 = findViewById(R.id.marry3);
 
-        killButton1 = (ImageButton) findViewById(R.id.kill1);
-        killButton2 = (ImageButton) findViewById(R.id.kill2);
-        killButton3 = (ImageButton) findViewById(R.id.kill3);
+        killButton1 = findViewById(R.id.kill1);
+        killButton2 = findViewById(R.id.kill2);
+        killButton3 = findViewById(R.id.kill3);
 
         kissButton1.setSelected(false);
         kissButton1.setVisibility(ImageButton.VISIBLE);
@@ -184,7 +192,7 @@ public class GameActivity extends AppCompatActivity {
         Utils.setButtonCustomFont(mContext, submitButton);
         Utils.setButtonCustomFont(mContext, nextButton);
 
-        homeButton = (ImageButton) findViewById(R.id.homeButton);
+        homeButton = findViewById(R.id.homeButton);
 
         setRandomImage();
 
@@ -937,7 +945,7 @@ public class GameActivity extends AppCompatActivity {
                     setContentView(R.layout.no_internet);
                     mContentView.setVisibility(View.GONE);
 
-                    SwipeRefreshLayout swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
+                    SwipeRefreshLayout swipe = findViewById(R.id.swipe);
                     swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                         @Override
                         public void onRefresh() {
@@ -959,7 +967,7 @@ public class GameActivity extends AppCompatActivity {
                     setContentView(R.layout.no_internet);
                     mContentView.setVisibility(View.GONE);
 
-                    SwipeRefreshLayout swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
+                    SwipeRefreshLayout swipe = findViewById(R.id.swipe);
                     swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                         @Override
                         public void onRefresh() {
@@ -1071,44 +1079,48 @@ public class GameActivity extends AppCompatActivity {
 
     public void setRandomImage() {
 
+        firstImage.setImageResource(0);
+        secondImage.setImageResource(0);
+        thirdImage.setImageResource(0);
+
         Random random = new Random();
 
         if (type.equals("male-players")) {
 
-            randomInt1 = random.nextInt(1);
-            randomInt2 = random.nextInt(1);
-            randomInt3 = random.nextInt(1);
+            randomInt1 = random.nextInt(howManyMale);
+            randomInt2 = random.nextInt(howManyMale);
+            randomInt3 = random.nextInt(howManyMale);
 
-            //if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
-            ValueEventListener listener = mDatabaseMale.child("male-players").addValueEventListener(new ValueEventListener() {
+            if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
+                ValueEventListener listener = mDatabaseMale.child("male-players").addValueEventListener(new ValueEventListener() {
 
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-
-                    ArrayList<Person> listPerson = new ArrayList<>();
-                    for (DataSnapshot personDataSnapshot : dataSnapshot.getChildren()) {
-                        Person person = personDataSnapshot.getValue(Person.class);
-                        listPerson.add(person);
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        ArrayList<Person> listPerson = new ArrayList<>();
+                        for (DataSnapshot personDataSnapshot : dataSnapshot.getChildren()) {
+                            Person person = personDataSnapshot.getValue(Person.class);
+                            listPerson.add(person);
+                        }
+                        setImageView(listPerson, randomInt1, randomInt2, randomInt3);
                     }
-                    setImageView(listPerson, randomInt1, randomInt2, randomInt3);
-                }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    setRandomImage();
-                }
-            });
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        setRandomImage();
+                    }
+                });
 
-            mDatabaseMale.removeEventListener(listener);
-            //} else {
-            //  setRandomImage();
-            //}
+                mDatabaseMale.removeEventListener(listener);
+
+            } else {
+                setRandomImage();
+            }
 
         } else if (type.equals("female-players")) {
 
-            randomInt1 = random.nextInt(1);
-            randomInt2 = random.nextInt(1);
-            randomInt3 = random.nextInt(1);
+            randomInt1 = random.nextInt(howManyFemale);
+            randomInt2 = random.nextInt(howManyFemale);
+            randomInt3 = random.nextInt(howManyFemale);
 
             //if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
             ValueEventListener listener = mDatabaseFemale.child("female-players").addValueEventListener(new ValueEventListener() {
@@ -1141,41 +1153,41 @@ public class GameActivity extends AppCompatActivity {
 
             if (randomInt == 1) {
 
-                randomInt1 = random.nextInt(1);
-                randomInt2 = random.nextInt(1);
-                randomInt3 = random.nextInt(1);
+                randomInt1 = random.nextInt(howManyMale);
+                randomInt2 = random.nextInt(howManyMale);
+                randomInt3 = random.nextInt(howManyMale);
 
-                //if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
-                ValueEventListener listener = mDatabaseMale.child("male-players").addValueEventListener(new ValueEventListener() {
+                if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
+                    ValueEventListener listener = mDatabaseMale.child("male-players").addValueEventListener(new ValueEventListener() {
 
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        ArrayList<Person> listPerson = new ArrayList<>();
-                        for (DataSnapshot personDataSnapshot : dataSnapshot.getChildren()) {
-                            Person person = personDataSnapshot.getValue(Person.class);
-                            listPerson.add(person);
+                            ArrayList<Person> listPerson = new ArrayList<>();
+                            for (DataSnapshot personDataSnapshot : dataSnapshot.getChildren()) {
+                                Person person = personDataSnapshot.getValue(Person.class);
+                                listPerson.add(person);
+                            }
+                            setImageView(listPerson, randomInt1, randomInt2, randomInt3);
                         }
-                        setImageView(listPerson, randomInt1, randomInt2, randomInt3);
-                    }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        setRandomImage();
-                    }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            setRandomImage();
+                        }
 
-                });
+                    });
 
-                mDatabaseMale.removeEventListener(listener);
-                //} else {
-                //   setRandomImage();
-                //}
+                    mDatabaseMale.removeEventListener(listener);
+                } else {
+                    setRandomImage();
+                }
 
             } else {
 
-                randomInt1 = random.nextInt(1);
-                randomInt2 = random.nextInt(1);
-                randomInt3 = random.nextInt(1);
+                randomInt1 = random.nextInt(howManyFemale);
+                randomInt2 = random.nextInt(howManyFemale);
+                randomInt3 = random.nextInt(howManyFemale);
 
                 //if ((randomInt1 != randomInt2) && (randomInt1 != randomInt3) && (randomInt2 != randomInt3)) {
                 ValueEventListener listener = mDatabaseFemale.child("female-players").addValueEventListener(new ValueEventListener() {
